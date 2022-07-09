@@ -1,17 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+/* Importar librerias para trabajar con react*/
+import React from "react";
+import ReactDOM from "react-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+/* Crearemos nuestro primer componente */
+const App = () => {
+  const fecha = new Date()
+  const a = 10
+  const b = 20
+  return (
+    <div>
+      <h1>Hola Mundo - Desde React</h1>
+      <br />
+      <h2>La fecha de hoy es: {fecha.toString()}</h2>
+      <h2>La suma de {a} + {b} = {a+b} </h2>
+    </div>
+  );
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+/* Cargar el componente en el index.html */
+const root = document.getElementById("root");
+ReactDOM.render(<App />, root);
